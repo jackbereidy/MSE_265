@@ -5,20 +5,36 @@
 		
 		<div id="content">
 			<div class="title-container">
-				<h1>New way for kitchen managers to get stuff done: KitchenBoss</h1>
+				<h1>KitchenBoss: a new way for co-op kitchen managers to get stuff done</h1>
 			</div>
-			<div>
-				<img class="top-image" src="https://i.imgur.com/hWlpEAO.png" alt="Smiley face">
+			<img class="top-image" src="https://i.imgur.com/hWlpEAO.png" alt="Smiley face">
+			<div id="article-spacer"></div>
+			<div class="article-information-container">
+				<span class="author"> Jack Reidy </span><br/>
+				<span class="author-position"> Engineer at KitchenBoss </span>
+				<br/>
+				<br/>
+				<span class="publish-date"> Published May 17, 2018 </span>
 			</div>
 			<div class="article">
+				<p>More and more, we rely on the internet for ways to safely store the things that matter—making life simpler and less cluttered. Over the years, we’ve provided people with easy, secure ways to create, store and share files online, including 15 GB of free space with every Google Account. Thanks to mobile phones, and new file formats like 4K video and high-res photography, people are storing more than ever before.</p>
+				<p>More and more, we rely on the internet for ways to safely store the things that matter—making life simpler and less cluttered. Over the years, we’ve provided people with easy, secure ways to create, store and share files online, including 15 GB of free space with every Google Account. Thanks to mobile phones, and new file formats like 4K video and high-res photography, people are storing more than ever before.</p>
+				<img class="article-image" src="https://i.imgur.com/MVS17Wh.png" alt="Smiley face">
 				<h2>Paragraph Heading</h2>
 				<p>More and more, we rely on the internet for ways to safely store the things that matter—making life simpler and less cluttered. Over the years, we’ve provided people with easy, secure ways to create, store and share files online, including 15 GB of free space with every Google Account. Thanks to mobile phones, and new file formats like 4K video and high-res photography, people are storing more than ever before.</p>
+				<img class="article-image" src="https://i.imgur.com/J8MDTqT.png" alt="Smiley face">
+				<p>More and more, we rely on the internet for ways to safely store the things that matter—making life simpler and less cluttered. Over the years, we’ve provided people with easy, secure ways to create, store and share files online, including 15 GB of free space with every Google Account. Thanks to mobile phones, and new file formats like 4K video and high-res photography, people are storing more than ever before.</p>
 			</div>
+			<div id="bottom-spacer"></div>
 		</div>
 	</div>
 
 </body>
 </html>
+
+<!-- https://i.imgur.com/hWlpEAO.png -->
+<!-- https://i.imgur.com/J8MDTqT.png -->
+<!-- https://i.imgur.com/MVS17Wh.png -->
 
 <style type="text/css">
 body {
@@ -34,6 +50,8 @@ h2 {
 p {
 	font-size: 17px;
 }
+
+/* page structure */
 #wrapper {
 	text-align: center;
 }
@@ -41,17 +59,44 @@ p {
 	max-width: 1000px;
 	display: inline-block;
 }
+#bottom-spacer {
+	min-height: 100px;
+}
+#article-spacer {
+	min-height: 20px;
+}
 .article {
-	width: 600px;
+	width: 550px;
 	display: inline-block;
 	text-align: left;
 }
+
+/* images */
 .top-image {
 	max-width: 1000px;
+}
+.article-image {
+	max-width: 550px;
+}
 
+/* article information */
+.article-information-container {
+	position: absolute !important;
+	text-align: left;
+	margin-top: 0.8em;
+}
+.author {
+	font-weight: bold;
+}
+.author-position {}
+.publish-date {
+	font-weight: lighter;
+	font-size: 14px;
+	color: #777777;
 }
 .title-container {
 	text-align: left;
+	font-family: 'Fira Sans', sans-serif;
 }
 </style>
-<link href="https://fonts.googleapis.com/css?family=Tajawal" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Tajawal" rel="stylesheet">
