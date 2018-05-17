@@ -7,7 +7,7 @@
 			<div class="title-container">
 				<h1>KitchenBoss: a new way for co-op kitchen managers to get stuff done</h1>
 			</div>
-			<img class="top-image" src="https://i.imgur.com/hWlpEAO.png" alt="Smiley face">
+			<img class="top-image modal-image" src="https://i.imgur.com/hWlpEAO.png" alt="Smiley face">
 			<div id="article-spacer"></div>
 			<div class="article-information-container">
 				<span class="author"> Jack Reidy </span><br/>
@@ -20,10 +20,10 @@
 				<p>More and more, we rely on the internet for ways to safely store the things that matter—making life simpler and less cluttered. Over the years, we’ve provided people with easy, secure ways to create, store and share files online, including 15 GB of free space with every Google Account. Thanks to mobile phones, and new file formats like 4K video and high-res photography, people are storing more than ever before.</p>
 				<h2>Create Orders</h2>
 				<p>More and more, we rely on the internet for ways to safely store the things that matter—making life simpler and less cluttered. Over the years, we’ve provided people with easy, secure ways to create, store and share files online, including 15 GB of free space with every Google Account. Thanks to mobile phones, and new file formats like 4K video and high-res photography, people are storing more than ever before.</p>
-				<img class="article-image" src="https://i.imgur.com/MVS17Wh.png" alt="Smiley face">
+				<img class="article-image modal-image" src="https://i.imgur.com/MVS17Wh.png" alt="Smiley face">
 				<h2>Check Inventory</h2>
 				<p>More and more, we rely on the internet for ways to safely store the things that matter—making life simpler and less cluttered. Over the years, we’ve provided people with easy, secure ways to create, store and share files online, including 15 GB of free space with every Google Account. Thanks to mobile phones, and new file formats like 4K video and high-res photography, people are storing more than ever before.</p>
-				<img class="article-image" src="https://i.imgur.com/J8MDTqT.png" alt="Smiley face">
+				<img class="article-image modal-image" src="https://i.imgur.com/J8MDTqT.png" alt="Smiley face">
 				<h2>Take Requests</h2>
 				<p>More and more, we rely on the internet for ways to safely store the things that matter—making life simpler and less cluttered. Over the years, we’ve provided people with easy, secure ways to create, store and share files online, including 15 GB of free space with every Google Account. Thanks to mobile phones, and new file formats like 4K video and high-res photography, people are storing more than ever before.</p>
 				<h2>Get started</h2>
@@ -32,7 +32,7 @@
 			<div id="bottom-spacer"></div>
 		</div>
 	</div>
-
+	<div id="modal-container"></div>
 </body>
 </html>
 
@@ -93,6 +93,26 @@ a:hover {
 .article-image {
 	max-width: 550px;
 }
+.modal-image {
+	cursor: pointer;
+}
+#modal-container {
+	position:fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: #000000cc;
+}
+.modal-image-popup {
+	max-width: 90%;
+	position:absolute;
+    top:0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    margin:auto;
+}
 
 /* article information */
 .article-information-container {
@@ -114,3 +134,32 @@ a:hover {
 }
 </style>
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Tajawal" rel="stylesheet">
+
+<script type="text/javascript">
+
+	window.onload = function() {
+		var modalContainer = document.getElementById('modal-container');
+		modalContainer.style.display = 'none';
+
+		var images = document.getElementsByClassName('modal-image');
+		for (var i = 0; i < images.length; i++) {
+			images[i].addEventListener('click', function (e) {
+				console.log("hi there");
+				var img = document.createElement('img');
+				img.setAttribute('class', 'modal-image-popup');
+				img.setAttribute('src', e.target.src);
+				modalContainer.appendChild(img);
+				modalContainer.style.display = 'inline';
+			});
+		}
+
+		document.getElementById('modal-container').addEventListener('click', function(e) {
+			modalContainer.style.display = 'none';
+			while (modalContainer.firstChild) {
+				modalContainer.removeChild(modalContainer.firstChild);
+			}
+		});
+
+	};
+
+</script>
